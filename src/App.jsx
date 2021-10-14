@@ -8,12 +8,11 @@ function App() {
   function handleChange(e) {
     const {value} = e.target
     setText(value)
-  }
+  } 
 
   function calculateWordCount(text) {
-    const wordsArr = text.split(" ")
-    console.log(wordsArr.length)
-    return wordsArr.length
+    const wordsArr = text.trim().split(" ")
+    return wordsArr.filter(word => word !== "").length
   }
 
   return (
