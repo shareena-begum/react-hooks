@@ -21,3 +21,12 @@ step: 2
  * 
  * https://scrimba.com/p/p7P5Hd/cW8Jdfy
  */
+
+step: 3
+
+/**
+ * Challenge:
+ * 
+ * Create a function to calculate the number of separate words in the `text` state
+ * For now, just console.log the word count when the button gets clicked to test it out.
+ */
