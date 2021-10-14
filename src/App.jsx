@@ -4,6 +4,7 @@ import './App.css'
 
 function App() {
   const [text, setText] = useState("")
+  const [timeRemaining, setTimeRemaining] = useState(5)
 
   function handleChange(e) {
     const {value} = e.target
@@ -22,7 +23,7 @@ function App() {
           onChange={handleChange}
           value={text}
       />
-      <h4>Time remaining: ???</h4>
+      <h4>Time remaining: {timeRemaining}</h4>
       <button>Start</button>
       <h1>Word Count  onClick={() => calculateWordCount(text)} : ???</h1>
     </div>

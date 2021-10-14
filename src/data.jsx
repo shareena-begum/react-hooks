@@ -30,3 +30,12 @@ step: 3
  * Create a function to calculate the number of separate words in the `text` state
  * For now, just console.log the word count when the button gets clicked to test it out.
  */
+
+step: 4
+
+/**
+ * Challenge:
+ * 
+ * 1. Create state to hold the current value of the countdown timer.
+ *    Display this time in the "Time Remaining" header
+ */
