@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
 
 import './App.css'
-
+ 
 function App() {
   const [text, setText] = useState("")
   const [timeRemaining, setTimeRemaining] = useState(5)
   const [isTimeRunning, setIsTimeRunning] = useState(false)
+  const [wordCount, setWordCount] = useState(0)
 
   function handleChange(e) {
     const {value} = e.target
@@ -24,6 +25,9 @@ function App() {
       }, 1000)
     } else if(timeRemaining === 0) {
       setIsTimeRunning(false)
+      const numWords = calculateWordCount(text)
+      console.log(numWords)
+      // setWordCount(calculateWordCount(text))
     }
   }, [timeRemaining, isTimeRunning])
 
@@ -36,7 +40,7 @@ function App() {
       />
       <h4>Time remaining: {timeRemaining}</h4>
       <button onClick={() => setIsTimeRunning(true)}>Start</button>
-      <h1>Word Count: ???</h1>
+      <h1>Word Count: {wordCount} </h1>
     </div>
   ) 
 }
