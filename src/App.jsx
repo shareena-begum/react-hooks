@@ -25,9 +25,7 @@ function App() {
       }, 1000)
     } else if(timeRemaining === 0) {
       setIsTimeRunning(false)
-      const numWords = calculateWordCount(text)
-      console.log(numWords)
-      // setWordCount(calculateWordCount(text))
+      setWordCount(calculateWordCount(text))
     }
   }, [timeRemaining, isTimeRunning])
 
