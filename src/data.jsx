@@ -66,4 +66,8 @@ step: 6
  * 
  * When the timer reaches 0, count the number of words the user typed in 
  * and display it in the "Word count" section
+ * 
+ * After the game ends, make it so the user can click the Start button again
+ * to play a second time
+ * 
  */
