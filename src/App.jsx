@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 import './App.css'
  
 function App() {
+  const STARTING_TIME = 5
+
   const [text, setText] = useState("")
   const [timeRemaining, setTimeRemaining] = useState(5)
   const [isTimeRunning, setIsTimeRunning] = useState(false)
@@ -20,8 +22,13 @@ function App() {
 
   function startClock() {
     setIsTimeRunning(true)
-    setTimeRemaining(5)
+    setTimeRemaining(STARTING_TIME)
     setText("")
+  }
+
+  function endGame() {
+    setIsTimeRunning(false)
+    setWordCount(calculateWordCount(text))
   }
 
   useEffect(() => {
@@ -30,8 +37,7 @@ function App() {
         setTimeRemaining(time => time - 1)
       }, 1000)
     } else if(timeRemaining === 0) {
-      setIsTimeRunning(false)
-      setWordCount(calculateWordCount(text))
+        endGame()
     }
   }, [timeRemaining, isTimeRunning])
 
@@ -41,9 +47,15 @@ function App() {
       <textarea
           onChange={handleChange}
           value={text}
+          disabled={! isTimeRunning}
       />
       <h4>Time remaining: {timeRemaining}</h4>
-      <button onClick={startClock}>Start</button>
+      <button 
+         onClick={startClock}
+         disabled={isTimeRunning}
+         >
+         Start
+      </button>
       <h1>Word Count: {wordCount} </h1>
     </div>
   ) 
